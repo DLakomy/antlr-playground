@@ -8,11 +8,11 @@ is my attempt.
 
 ## Done
 - basic listener-based parser
+- tests of the listener parser
 
 ## TODO
-- tests
 - replace Java with G4 (+ sbt plugin)
-- visitor pattern
+- visitor pattern + tests
 - benchmark both
 
 ## Won't be done
