@@ -12,7 +12,7 @@ import antlrTree.ParseTreeWalker
 
 import collection.JavaConverters._
 
-def parse(input: String, fnName: String, keyArgName: String, valueArgName: String): ParseResult =
+def parse(input: String, cfg: ParserConfig): ParseResult =
 
   // AFAIK the stream shold be uppercase
   // for this project this will be enough tho
@@ -22,21 +22,21 @@ def parse(input: String, fnName: String, keyArgName: String, valueArgName: Strin
   val parser = PlSqlParser(tokens)
   val tree = parser.anonymous_block;
 
-  val extractor = MsgListener(fnName, keyArgName, valueArgName)
+  val extractor = MsgListener(cfg)
   ParseTreeWalker.DEFAULT.walk(extractor, tree)
 
   extractor.result
 
 // leaky abstraction, conceal don't feel
-private class MsgListener(fnName: String, keyArgName: String, valueArgName: String) extends PlSqlParserBaseListener:
+private class MsgListener(cfg: ParserConfig) extends PlSqlParserBaseListener:
 
   var result: ParseResult = Map.empty
 
   override def enterFunction_call(ctx: Function_callContext): Unit =
-    if ctx.routine_name.getText.toLowerCase != fnName then return
+    if ctx.routine_name.getText.toLowerCase != cfg.fnName then return
 
     val argList = ctx.function_argument.argument
-    val filtered = argList.asScala.toList.filter( arg => List(keyArgName, valueArgName) contains arg.identifier.getText )
+    val filtered = argList.asScala.toList.filter( arg => List(cfg.keyArgName, cfg.valueArgName) contains arg.identifier.getText )
     val grouped = filtered.grouped(2).toList
 
     // tuples are (msgCode, msgTxt)

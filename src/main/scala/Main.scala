@@ -1,13 +1,17 @@
 package antlrPlayground
 
 import model._
+import constants._
 
 @main def printResults: Unit =
   val listenerResult = listenerBasedParser.parse(
-    constants.exampleInput,
-    constants.fnName,
-    constants.keyArgName,
-    constants.valueArgName)
+    exampleInput,
+    ParserConfig(
+      fnName,
+      keyArgName,
+      valueArgName
+    )
+  )
 
   printResult(listenerResult)
 
