@@ -9,9 +9,9 @@ is my attempt.
 ## Done
 - basic listener-based parser
 - tests of the listener parser
+- using the ANTL4 generator instead of keeping generated classes in the repo
 
 ## TODO
-- replace Java with G4 (+ sbt plugin)
 - visitor pattern + tests
 - benchmark both
 
@@ -22,3 +22,6 @@ for something more than my playground:
 - semantical validation (the implementation is based on a lot of unsafe assumptions)
 - better model (`type ParseResult = Map[String, String]` is good enough, but too concrete in general, I think; `opaque` or a `case class` could be a bit better;
 there should be some ADT for errors, as well)
+
+## Credits:
+Source of the grammar and the `*Base.java` files: https://github.com/antlr/grammars-v4/tree/master/sql/plsql
