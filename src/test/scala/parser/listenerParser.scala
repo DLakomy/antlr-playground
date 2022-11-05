@@ -3,8 +3,7 @@ package tests
 
 import constants._
 import model._
-import listenerBasedParser.parse
-import listenerBasedParser.MsgListener // TODO hide better
+import listenerBasedParser._
 import org.scalatest.flatspec.AnyFlatSpec
 
 class ListenerBasedParserSpec extends AnyFlatSpec:
