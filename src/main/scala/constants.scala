@@ -4,7 +4,7 @@ package constants
 import model._
 
 // anonymised input
-// I assume, for simplicity, that the outpur looks almost exactly like that
+// I assume, for simplicity, that the output looks almost exactly like that
 // ie. p_txt is after p_name, and there is no other commands
 val exampleInput: String =
 """BEGIN
