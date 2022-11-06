@@ -29,4 +29,4 @@ for something more than my playground:
 there should be some ADT for errors, as well)
 
 ## Credits:
-Source of the grammar and the `*Base.java` files: https://github.com/antlr/grammars-v4/tree/master/sql/plsql
+Source of the grammar and the `*Base.java` files: https://github.com/antlr/grammars-v4/tree/9338662/sql/plsql
