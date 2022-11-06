@@ -12,12 +12,12 @@ ANTL4 sbt plugin generates the parser (Java classes with the said `*Base` as a s
 code uses these classes to parse some input and do the task required with the parse result.
 
 ## Done
-- basic listener-based parser
+- basic listener based parser
+- basic visitor based parser
 - tests of the listener parser
 - using the ANTL4 generator instead of keeping generated classes in the repo
 
 ## TODO
-- visitor pattern + tests
 - benchmark both
 
 ## Won't be done
