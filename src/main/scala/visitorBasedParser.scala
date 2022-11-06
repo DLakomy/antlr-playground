@@ -3,8 +3,7 @@ package visitorBasedParser
 
 import model._
 import PlSqlParser._
-import org.antlr.v4.runtime.{ANTLRInputStream, CommonTokenStream, CharStreams, tree as antlrTree}
-import antlrTree.ParseTreeWalker
+import org.antlr.v4.runtime.{ANTLRInputStream, CommonTokenStream, CharStreams}
 
 import collection.JavaConverters._
 
