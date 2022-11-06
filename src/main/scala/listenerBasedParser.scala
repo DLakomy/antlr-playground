@@ -7,7 +7,7 @@ package listenerBasedParser
 
 import model._
 import PlSqlParser._
-import org.antlr.v4.runtime.{ANTLRInputStream, CommonTokenStream, tree as antlrTree}
+import org.antlr.v4.runtime.{ANTLRInputStream, CommonTokenStream, CharStreams, tree as antlrTree}
 import antlrTree.ParseTreeWalker
 
 import collection.JavaConverters._
@@ -16,7 +16,7 @@ def parse(input: String, cfg: ParserConfig): ParseResult =
 
   // AFAIK the stream shold be uppercase
   // for this project this will be enough tho
-  val charStream = ANTLRInputStream(input)
+  val charStream = CharStreams.fromString(input)
   val lexer = PlSqlLexer(charStream)
   val tokens = CommonTokenStream(lexer)
   val parser = PlSqlParser(tokens)
