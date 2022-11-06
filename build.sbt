@@ -7,7 +7,7 @@ val antlrVersion = "4.11.1"
 Antlr4 / antlr4Version := antlrVersion
 Antlr4 / antlr4PackageName := Some("antlrPlayground")
 Antlr4 / antlr4GenListener := true
-Antlr4 / antlr4GenVisitor := false
+Antlr4 / antlr4GenVisitor := true
 
 lazy val root = project
   .in(file("."))
