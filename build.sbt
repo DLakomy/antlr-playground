@@ -1,6 +1,7 @@
 val scala3Version = "3.2.0"
 
 enablePlugins(Antlr4Plugin)
+enablePlugins(JmhPlugin)
 
 val antlrVersion = "4.11.1"
 
